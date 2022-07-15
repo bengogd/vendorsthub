@@ -27,8 +27,7 @@ class Product(models.Model):
     sales_location = models.CharField(max_length=300)
     category = models.ForeignKey(Category,related_name='Category', on_delete=models.CASCADE)
     seller_name = models.CharField(max_length=300)
-    image = models.ImageField(upload_to='products/%Y/%m/%d',
-                              blank=True)
+    image = models.ImageField(upload_to='photos/%Y/%m/%d')
     price = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)
     is_published = models.BooleanField(default=False)
